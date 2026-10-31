@@ -1,0 +1,3 @@
+# Clop auto-creates JPEG copies of the .webp pages; the site doesn't use them.
+*.jpeg
+.DS_Store
