@@ -3,7 +3,7 @@
 A three-page wedding invitation website. Plain HTML and images, no build step.
 
 - `index.html` — the page (pages stack vertically and scroll on every screen size)
-- `assets/page-1.webp` … `page-3.webp` — invitation pages cropped from the original artwork
+- `assets/page-1.webp`, `page-2-motif.webp`, `page-3.webp` — invitation pages cropped from the original artwork. Page 2 is taller (507×1124): a blank strip was added under the venue address, and the motif (colour swatches and names) is drawn over it in `index.html`, so the colours and names can be edited there.
 - `assets/thumbnail-page-1.jpg` — link preview image (page 1) for Messenger, Facebook, etc. Facebook caches preview images by URL, so a new thumbnail needs a new filename.
 - `assets/share-preview.jpg` — the zip's original landscape preview card, currently unused
 

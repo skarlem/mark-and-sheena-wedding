@@ -18,6 +18,9 @@
   <meta property="og:image:alt" content="Page one of Mark and Sheena's wedding invitation">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Cormorant+Garamond:wght@600&display=swap">
   <style>
     :root { color-scheme: light; }
     *, *::before, *::after { box-sizing: border-box; }
@@ -70,6 +73,13 @@
     }
     .hot:focus-visible { outline: 3px solid #c99a3e; outline-offset: 2px; }
 
+    /* Artwork added in HTML on top of a page image, drawn in that page's source-pixel space. */
+    .art { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .art .gold-line { fill: none; stroke: #bf914a; stroke-width: .8; }
+    .art text { fill: #14244a; text-anchor: middle; }
+    .art .motif-title { font: 600 16px 'Cinzel', 'Trajan Pro', Georgia, serif; letter-spacing: 2.6px; }
+    .art .motif-label { font: 600 16px 'Cormorant Garamond', Georgia, serif; }
+
     @media (min-width: 700px) {
       .book { gap: 28px; padding: 32px 16px; }
     }
@@ -83,9 +93,37 @@
         alt="Together with our families, we kindly invite you to Mark and Sheena's wedding. A celebration of love, family and the people who matter most.">
     </section>
 
-    <section class="page" aria-label="Invitation, page 2 of 3">
-      <img src="assets/page-2.webp" width="507" height="1024" loading="lazy"
+    <!-- Page 2 is taller: its image has a blank strip under the address for the motif below. -->
+    <section class="page" style="--ph: 1124" aria-label="Invitation, page 2 of 3">
+      <img src="assets/page-2-motif.webp" width="507" height="1124" loading="lazy"
         alt="Please join us as we celebrate the beginning of our forever. Mark and Sheena's Wedding, Tuesday, November 17, 2026 at 1:00 PM. RKB Intimate Event Center, Zenia Street, Purok Tinio Uno, Barangay Poblacion, Polomolok, 9504 South Cotabato.">
+      <svg class="art" viewBox="0 0 507 1124" role="img" aria-label="Motif: navy blue, royal blue, gold and champagne">
+        <defs>
+          <linearGradient id="gold-swatch" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e4c88f"/>
+            <stop offset=".55" stop-color="#bf914a"/>
+            <stop offset="1" stop-color="#9a6a2a"/>
+          </linearGradient>
+        </defs>
+        <path class="gold-line" d="M139.5 706.5h69M298.5 706.5h69"/>
+        <text class="motif-title" x="254.8" y="711">MOTIF</text>
+        <g class="gold-line">
+          <circle cx="139.5" cy="736" r="15.5"/>
+          <circle cx="215.5" cy="736" r="15.5"/>
+          <circle cx="291.5" cy="736" r="15.5"/>
+          <circle cx="367.5" cy="736" r="15.5"/>
+        </g>
+        <circle cx="139.5" cy="736" r="12.5" fill="#0b1d4d"/>
+        <circle cx="215.5" cy="736" r="12.5" fill="#24498a"/>
+        <circle cx="291.5" cy="736" r="12.5" fill="url(#gold-swatch)"/>
+        <circle cx="367.5" cy="736" r="12.5" fill="#ead6ad"/>
+        <g class="motif-label">
+          <text x="139.5" y="768">Navy Blue</text>
+          <text x="215.5" y="768">Royal Blue</text>
+          <text x="291.5" y="768">Gold</text>
+          <text x="367.5" y="768">Champagne</text>
+        </g>
+      </svg>
       <a class="hot" style="--x:64; --y:590; --w:383; --h:96" href="https://maps.app.goo.gl/X4AbkNUf7yiEC4cMA" target="_blank" rel="noopener" aria-label="Open RKB Intimate Event Center in Google Maps"></a>
     </section>
 
